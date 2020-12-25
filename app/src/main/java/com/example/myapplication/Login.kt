@@ -40,7 +40,7 @@ class Login : AppCompatActivity() {
         editor.putBoolean("auto",true).apply()
         editor.putString("id",id).apply()
         editor.putString("password",password).apply()
-
+        editor.commit()
     }
     fun auto_login(){
 
