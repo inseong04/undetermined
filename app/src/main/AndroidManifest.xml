@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".signup.Signup_PASSWORD" />
         <activity android:name=".signup.Signup_ID" />
-        <activity android:name=".Login" />
+        <activity android:name=".Login" />s
         <activity android:name=".MainActivity"></activity>
     </application>
 
