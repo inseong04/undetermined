@@ -23,7 +23,7 @@ class Login : AppCompatActivity() {
         auth = Firebase.auth
         val sharedPreferences : SharedPreferences = getSharedPreferences("Login_information",0)
         if(sharedPreferences.getBoolean("auto",false)){
-            auto_login()
+            auto_login(sharedPreferences)
         }
 
         login_btn.setOnClickListener {
@@ -32,6 +32,7 @@ class Login : AppCompatActivity() {
             // 로그인 구현하기.
             if (autologin_Check.isChecked){
                 auto_save(sharedPreferences,id,password)
+                login(id,password)
             }
         }
         gotosignup_tv.setOnClickListener {
@@ -41,14 +42,22 @@ class Login : AppCompatActivity() {
     }
 
     private fun auto_save(sharedPreferences: SharedPreferences,id : String,password : String){
-        var editor = sharedPreferences.edit()
-        editor.putBoolean("auto",true).apply()
-        editor.putString("id",id).apply()
-        editor.putString("password",password).apply()
-        editor.commit()
+        if(id != null && password != null) {
+            var editor = sharedPreferences.edit()
+            editor.putBoolean("auto", true).apply()
+            editor.putString("id", id).apply()
+            editor.putString("password", password).apply()
+            editor.commit()
+        }
     }
-    private fun auto_login(){
-
+    private fun auto_login(sharedPreferences: SharedPreferences){
+        var id = sharedPreferences.getString("id","")
+        var password = sharedPreferences.getString("password","")
+        if (id != null) {
+            if (password != null) {
+                login(id,password)
+            }
+        }
     }
 
     private fun login(email : String,password : String){
