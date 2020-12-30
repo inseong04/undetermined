@@ -18,6 +18,8 @@ public class Intro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
+        // TODO : 인트로에서 자동로그인을 체크챘는지 안했는지 확인하여 if문 사용해 Login 또는 Mainactivity로 이동 코드짜야함.
+
         TextView tv1 = findViewById(R.id.tv1);
         TextView tv2 = findViewById(R.id.tv2);
         TextView logo = findViewById(R.id.logo);
