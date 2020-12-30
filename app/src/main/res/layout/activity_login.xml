@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#88ccff"
+    android:background="#ff4444"
     tools:context=".Login">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/title_layout"
@@ -14,7 +14,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Class Cord"
+        android:text="Red Effect"
         android:textSize="60dp"
         android:textColor="#ffffff"
         android:fontFamily="@font/apple_sd_gothic_neo_h"

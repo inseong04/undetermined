@@ -4,17 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ff4444"
     tools:context=".signup.Intro">
     <TextView
+        android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Intro"
-        android:textSize="50dp"
+        android:text="헌혈관리를"
+        android:textSize="45dp"
+        android:textColor="#ffffff"
         android:gravity="center"
+        android:visibility="invisible"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        android:layout_marginTop="15dp"
+        />
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="체계적으로"
+        android:textSize="35dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:fontFamily="@font/apple_sd_gothic_neo_r"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        />
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Red Effect"
+        android:textSize="50dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:visibility="invisible"
         android:fontFamily="@font/apple_sd_gothic_neo_h"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

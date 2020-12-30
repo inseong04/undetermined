@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.myapplication.signup.Signup_ID
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -15,12 +16,12 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 
 class Login : AppCompatActivity() {
-    private lateinit var auth: FirebaseAuth
+    private var auth: FirebaseAuth = Firebase.auth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        auth = Firebase.auth
+
         val sharedPreferences : SharedPreferences = getSharedPreferences("Login_information",0)
         if(sharedPreferences.getBoolean("auto",false)){
             auto_login(sharedPreferences)
@@ -29,9 +30,12 @@ class Login : AppCompatActivity() {
         login_btn.setOnClickListener {
             var id = id_etv.text.toString()
             var password = password_etv.text.toString()
-            // 로그인 구현하기.
+
             if (autologin_Check.isChecked){
                 auto_save(sharedPreferences,id,password)
+                login(id,password)
+            }
+            else{
                 login(id,password)
             }
         }
@@ -70,6 +74,7 @@ class Login : AppCompatActivity() {
                     } else {
                         // If sign in fails, display a message to the user.
                         // ...
+                        Toast.makeText(applicationContext,"Error",Toast.LENGTH_SHORT)
                     }
 
                     // ...
