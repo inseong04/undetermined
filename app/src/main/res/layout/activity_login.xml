@@ -67,7 +67,7 @@
             android:layout_width="250dip"
             android:layout_height="wrap_content"
             android:text="자동로그인"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:fontFamily="@font/apple_sd_gothic_neo_r"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
